@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 int main(int argc, char **argv)
 {
 	sf::Window window(sf::VideoMode(800, 600), "Ma fenêtre swaggy");
