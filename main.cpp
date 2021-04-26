@@ -1,8 +1,11 @@
 #include <SFML/Graphics.hpp>
-//#include "constantes.h"
-//#include "jeu.h"
-//#include "editeur.h"
+#include <iostream>
 
+#include "constantes.h"
+#include "jeu.h"
+#include "editeur.h"
+
+using namespace std;
 
 int main(int argc, char **argv)
 {
