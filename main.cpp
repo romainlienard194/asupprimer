@@ -1,41 +1,38 @@
 #include <SFML/Graphics.hpp>
+#include "World.cpp"
+#include "gameTile.cpp"
 #include <iostream>
 
 
 int main()
 {
-	// création de la fenêtre
+	
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Mario Sokoban demo de l'apha de la beta");
 
+	GameWorld gameWorld = GameWorld();
+
 	sf::Texture texture;
-	if(!texture.loadFromFile("sprites-sokoban-2021/mario_bas.gif"))
-	{
+	if (!texture.loadFromFile("Images/objectif.jpg")) {
 		return 0;
 	}
+
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
 
-	// on fait tourner le programme tant que la fenêtre n'a pas été fermée
-	while (window.isOpen())
-	{
-		// on traite tous les évènements de la fenêtre qui ont été générés depuis la dernière itération de la boucle
+	while (window.isOpen()) {
 		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			// fermeture de la fenêtre lorsque l'utilisateur le souhaite
-			if (event.type == sf::Event::Closed)
+		while (window.pollEvent(event)) {
+			if (event.type == sf::Event::Closed) {
 				window.close();
+			}
 		}
+		window.clear();
 
-		// effacement de la fenêtre en noir
-		window.clear(sf::Color::Black);
-
-		// c'est ici qu'on dessine tout
-		//window.draw(sprite);
-
-		// fin de la frame courante, affichage de tout ce qu'on a dessiné
+		for (int i = 0; i < gameWorld.gridLenght; i++) {
+			for (int j = 0; j <gameWorld.gridLenght; j++) {
+				window.draw(gameWorld.tiles[i][j]->sprite);
+			}
+		}
 		window.display();
 	}
-
-	return 0;
 }

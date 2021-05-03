@@ -13,7 +13,7 @@ public:
 	sf::Texture texture;
 	sf::Sprite sprite;
 
-	GameTile(std::strig, float, float, bool, bool);
+	GameTile(std::string, float, float, bool, bool);
 	bool setUpSprite(std::string);
 };
 

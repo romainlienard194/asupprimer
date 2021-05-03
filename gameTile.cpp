@@ -1,6 +1,6 @@
 #include "gameTile.h"
 
-GameTile::GameTile(std::string textureName, float, float y, bool passable, bool exit);
+GameTile::GameTile(std::string textureName, float x, float y, bool passable, bool exit)
 {
 	if (!setUpSprite(textureName))
 	{
@@ -12,7 +12,9 @@ GameTile::GameTile(std::string textureName, float, float y, bool passable, bool 
 	isExit = exit;
 }
 
-bool GameTile::setUpSprite(std::string textureName) 
+
+
+bool GameTile::setUpSprite(std::string textureName)
 {
 	if (!texture.loadFromFile(textureName))
 	{
