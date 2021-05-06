@@ -1,6 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include "World.cpp"
-#include "gameTile.cpp"
 #include <iostream>
 
 
